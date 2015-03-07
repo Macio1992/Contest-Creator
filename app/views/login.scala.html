@@ -1,0 +1,11 @@
+@(loginForm: Form[Account])
+
+@import helper._
+
+@main() {
+    @form(routes.LoginController.login) {
+        @inputText(loginForm("email"), '_label-> Messages("email"))
+        @inputText(loginForm("password"), '_label->Messages("password"))
+        <input type="submit">
+    }
+}

@@ -1,14 +1,19 @@
 package controllers;
 
-import play.*;
+import models.Account;
+import play.data.Form;
 import play.mvc.*;
 
 import views.html.*;
-
+/** Application controller*/
 public class Application extends Controller {
 
+    /** index method */
     public static Result index() {
-        return ok(index.render("Your new application is ready."));
+
+        Form<Account> formAccount = Form.form(Account.class);
+
+        return ok(login.render(formAccount));
     }
 
 }
