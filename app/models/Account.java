@@ -44,11 +44,24 @@ public class Account extends Model{
     /** account status*/
     public AccountStatus accountStatus;
 
+    /** find account by mail and status
+     * @author Maciej Zbierowski
+     * @param email - mail
+     * @param accountStatus - account status
+     * @return account
+     */
     public static Account findByEmailAndAccountStatus(String email, AccountStatus accountStatus) {
-        accountStatus = accountStatus.ACTIVE;
-        return Ebean.find(Account.class).where().eq("email", email).where().eq("accountStatus", accountStatus).findUnique();
+        return Ebean.find(Account.class).where().eq("email", email).eq("account_status", accountStatus).findUnique();
+    }
+
+    /** find account by mail function
+     * @author Maciej Zbierowski
+     * @param email - mail
+     * @return account
+     */
+    public static Account findByEmail(String email) {
+        return Ebean.find(Account.class).where().eq("email", email).findUnique();
     }
 
     public static interface LoginForm {};
 }
-

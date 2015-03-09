@@ -1,5 +1,8 @@
 @()(content: Html)
 
+@import enums.SessionKey
+@import helper._
+
 <!DOCTYPE html>
 
 <html>
@@ -10,8 +13,16 @@
         <script src="@routes.Assets.at("javascripts/hello.js")" type="text/javascript"></script>
     </head>
     <body>
+            @if(session().get(SessionKey.ACCOUNT_ID.toString()) != null) {
 
-        @content
+                @form(routes.LoginController.logout()) {
+                    <input type="submit">
+                }
+
+            }
+
+            @helper.myAlerts()
+            @content
 
     </body>
 </html>

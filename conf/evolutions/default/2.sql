@@ -2,7 +2,7 @@
 
 INSERT INTO account(
             id, email, first_name, last_name, password, account_type, account_status)
-    VALUES (1, 'user@test.pl', 'testName', 'testLastName', '05a671c66aefea124cc08b76ea6d30bb', 'CLIENT', 'N');
+    VALUES (1, 'user@test.pl', 'testName', 'testLastName', '05a671c66aefea124cc08b76ea6d30bb', 'CLIENT', 'D');
 
 INSERT INTO account(
             id, email, first_name, last_name, password, account_type, account_status)

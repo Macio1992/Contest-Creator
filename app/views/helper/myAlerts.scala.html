@@ -1,0 +1,30 @@
+<div id="alert-box">
+    @if(flash.containsKey("fail")) {
+    <div class="alert alert-warning">
+        <div class="content">
+            @Html(flash.get("fail"))
+        </div>
+    </div>
+    }
+    @if(flash.containsKey("success")) {
+    <div class="alert alert-success">
+        <div class="content">
+            @Html(flash.get("success"))
+        </div>
+    </div>
+    }
+    @if(flash.containsKey("info")) {
+    <div class="alert alert-info">
+        <div class="content">
+            @Html(flash.get("info"))
+        </div>
+    </div>
+    }
+    @if(flash.containsKey("error")) {
+    <div class="alert alert-info">
+        <div class="content">
+            @Html(flash.get("error"))
+        </div>
+    </div>
+    }
+</div>
