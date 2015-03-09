@@ -44,8 +44,9 @@ public class Account extends Model{
     /** account status*/
     public AccountStatus accountStatus;
 
-    public static Account findByEmail(String email) {
-        return Ebean.find(Account.class).where().eq("email", email).findUnique();
+    public static Account findByEmailAndAccountStatus(String email, AccountStatus accountStatus) {
+        accountStatus = accountStatus.ACTIVE;
+        return Ebean.find(Account.class).where().eq("email", email).where().eq("accountStatus", accountStatus).findUnique();
     }
 
     public static interface LoginForm {};

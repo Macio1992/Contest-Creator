@@ -21,7 +21,7 @@ public class LoginController extends Controller{
             return badRequest(login.render(formAccount));
         }
 
-        Account account = Account.findByEmail(formAccount.get().email);
+        Account account = Account.findByEmailAndAccountStatus(formAccount.get().email, formAccount.get().accountStatus);
         if (account == null) {
             Logger.info("wrong email");
             return badRequest(login.render(formAccount));
